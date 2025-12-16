@@ -23,9 +23,12 @@ function App() {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await axios.post('http://127.0.0.1:5000/optimal_price', form);
-      setResult(res.data);
-    } catch (err) {
+  const res = await axios.post(
+    'https://dynamic-pricing-backend.onrender.com/optimal_price',
+    form
+  );
+  setResult(res.data);
+}catch (err) {
       alert("Backend not running!");
     } finally {
       setLoading(false);
